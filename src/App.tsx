@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.css'
+import { SomeBlock } from './styles'
+import { globalStyles } from './global-styles'
+
+import { Button } from './components/generic/Button'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {globalStyles}
+      <SomeBlock>8==э</SomeBlock>
+      <Button>BUTTON 1</Button>
+      <Button variant="secondary">BUTTON 2</Button>
+      <Button>BUTTON 3</Button>
     </div>
   );
 }
