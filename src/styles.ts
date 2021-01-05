@@ -6,5 +6,4 @@ export const SomeBlock = styled.div`
   background: green;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
