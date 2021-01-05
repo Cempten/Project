@@ -1,6 +1,10 @@
 import React, { useState } from 'react' 
 
-export const TodoForm: React.FC = () => {
+interface TodoFormProps {
+    onAdd(title: string): void
+}
+
+export const TodoForm: React.FC<TodoFormProps> = (props) => {
     const [title, setTitle] = useState('')
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -9,7 +13,7 @@ export const TodoForm: React.FC = () => {
 
     const pressHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
-            console.log(title)                                                   // ЗАМЕНИТЬ 
+            props.onAdd(title)
             setTitle('')
         }
     }

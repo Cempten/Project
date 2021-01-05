@@ -6,11 +6,15 @@ import { TodoForm } from './components/TodoForm';
 import { TodoList } from './components/TodoList';
 
 function App() {
+  const addHandler = (title: string) => {
+    
+  }
+
   return (
     <>
       <Navbar />
       <div className="container px2">
-        <TodoForm />
+        <TodoForm onAdd={addHandler}/>
         <TodoList />
       </div>
     </>
