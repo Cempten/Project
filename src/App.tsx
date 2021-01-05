@@ -1,15 +1,16 @@
 import React from 'react';
 import './index.css'
-import { SomeBlock } from './styles'
-import { globalStyles } from './global-styles'
 
-import { Button } from './components/generic/Button'
+import { Navbar } from './components/Navbar'
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <Navbar />
+      <div className="App">
       
-    </div>
+      </div>
+    </>
   );
 }
 
