@@ -2,10 +2,16 @@ import React from 'react'
 import { ITodo } from './Interface'
 
 interface TodoListProps {
-    todos: ITodo[]
+    todos: ITodo[],
+    onRemove(id: number): void,
 }
 
 export const TodoList: React.FC<TodoListProps> = (props) => {
+    const clickIconHandler = (event: React.MouseEvent, id: number) => {
+        event.preventDefault()
+        props.onRemove(id)
+    }
+
     if (props.todos.length === 0) {
         return <div className="center">Задач нет</div>
     }
@@ -18,7 +24,10 @@ export const TodoList: React.FC<TodoListProps> = (props) => {
                         <label>
                             <input type="checkbox" />
                             <span>{todo.title}</span>
-                            <i className="material-icons red-text">delete</i>
+                            <i
+                            className="material-icons red-text" 
+                            onClick={event => clickIconHandler(event, todo.id)}
+                            >delete</i>
                         </label>
                     </li>
                 )

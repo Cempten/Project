@@ -18,12 +18,19 @@ function App() {
     setTodos(prev => [newTodo, ...prev])
   }
 
+  const removeHandler = (id: number) => {
+    const agree = window.confirm('Вы уверены, что хотите удалить задачу?')
+    if (agree) {
+      setTodos(prev => prev.filter(todo => todo.id !== id))
+    }
+  }
+
   return (
     <>
       <Navbar />
       <div className="container px2">
         <TodoForm onAdd={addHandler}/>
-        <TodoList todos={todos}/>
+        <TodoList todos={todos} onRemove={removeHandler}/>
       </div>
     </>
   );
