@@ -7,7 +7,7 @@ export const TodoList: React.FC = () => {
                 <label>
                     <input type="checkbox" />
                     <span>Дело</span>
-                    <i className="material-icons">delete</i>
+                    <i className="material-icons red-text">delete</i>
                 </label>
             </li>
         </ul>
