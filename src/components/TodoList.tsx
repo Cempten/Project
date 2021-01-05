@@ -6,6 +6,10 @@ interface TodoListProps {
 }
 
 export const TodoList: React.FC<TodoListProps> = (props) => {
+    if (props.todos.length === 0) {
+        return <div className="center">Задач нет</div>
+    }
+
     return (
         <ul>
             {props.todos.map(todo => {
