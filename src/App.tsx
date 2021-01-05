@@ -23,7 +23,7 @@ function App() {
       <Navbar />
       <div className="container px2">
         <TodoForm onAdd={addHandler}/>
-        <TodoList />
+        <TodoList todos={todos}/>
       </div>
     </>
   );

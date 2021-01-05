@@ -1,15 +1,24 @@
 import React from 'react' 
+import { ITodo } from './Interface'
 
-export const TodoList: React.FC = () => {
+interface TodoListProps {
+    todos: ITodo[]
+}
+
+export const TodoList: React.FC<TodoListProps> = (props) => {
     return (
         <ul>
-            <li className="list">
-                <label>
-                    <input type="checkbox" />
-                    <span>Дело</span>
-                    <i className="material-icons red-text">delete</i>
-                </label>
-            </li>
+            {props.todos.map(todo => {
+                return (
+                    <li className="list" key={todo.id}>
+                        <label>
+                            <input type="checkbox" />
+                            <span>{todo.title}</span>
+                            <i className="material-icons red-text">delete</i>
+                        </label>
+                    </li>
+                )
+            })}
         </ul>
     )
 }

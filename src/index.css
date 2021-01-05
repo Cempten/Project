@@ -15,6 +15,10 @@ body {
   padding: 1rem 0;
 }
 
+.list {
+  margin-bottom: 1rem;
+}
+
 .list label {
   display: flex;
   justify-content: space-between;
