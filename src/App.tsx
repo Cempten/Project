@@ -16,7 +16,6 @@ function App() {
       completed: false,
     }
     setTodos(prev => [newTodo, ...prev])
-    console.log(todos)
   }
 
   return (
