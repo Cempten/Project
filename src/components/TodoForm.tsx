@@ -9,7 +9,7 @@ export const TodoForm: React.FC = () => {
 
     const pressHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
-            console.log(title)
+            console.log(title)                                                   // ЗАМЕНИТЬ 
             setTitle('')
         }
     }
