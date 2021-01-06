@@ -25,12 +25,25 @@ function App() {
     }
   }
 
+  const completeHandler = (id: number) => {
+    setTodos(prev => 
+      prev.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed                                         //не работает
+        }
+        return todo
+      }
+    ))
+  }
+
   return (
     <>
       <Navbar />
       <div className="container px2">
         <TodoForm onAdd={addHandler}/>
-        <TodoList todos={todos} onRemove={removeHandler}/>
+        <TodoList todos={todos} 
+        onRemove={removeHandler}
+        onComplete={completeHandler}/>
       </div>
     </>
   );

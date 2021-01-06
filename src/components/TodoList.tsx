@@ -4,6 +4,7 @@ import { ITodo } from './Interface'
 interface TodoListProps {
     todos: ITodo[],
     onRemove(id: number): void,
+    onComplete(id: number): void,
 }
 
 export const TodoList: React.FC<TodoListProps> = (props) => {
@@ -22,7 +23,10 @@ export const TodoList: React.FC<TodoListProps> = (props) => {
                 return (
                     <li className="list" key={todo.id}>
                         <label>
-                            <input type="checkbox" />
+                            <input 
+                            type="checkbox" 
+                            checked={todo.completed} 
+                            onChange={() => props.onComplete(todo.id)}/>
                             <span>{todo.title}</span>
                             <i
                             className="material-icons red-text" 
