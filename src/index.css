@@ -26,3 +26,7 @@ body {
   background: #f3f3f3;
   padding: 1rem;
 }
+
+.completed span{
+  text-decoration: line-through;
+}

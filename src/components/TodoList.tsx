@@ -20,8 +20,12 @@ export const TodoList: React.FC<TodoListProps> = (props) => {
     return (
         <ul>
             {props.todos.map(todo => {
+                const style = ['list']
+                if (todo.completed === true) {
+                    style.push('completed')
+                }
                 return (
-                    <li className="list" key={todo.id}>
+                    <li className={style.join(' ')} key={todo.id}>
                         <label>
                             <input 
                             type="checkbox" 
