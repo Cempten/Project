@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export const Navbar: React.FC = () => {
     return (
@@ -6,8 +7,8 @@ export const Navbar: React.FC = () => {
             <div className="nav-wrapper orange darken-3 px1">
             <a href="/" className="brand-logo">Todo-list</a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><a href="/">1</a></li>
-                <li><a href="/">2</a></li>
+                <li><NavLink to="/">Список дел</NavLink></li>
+                <li><NavLink to="/about">Страница информации</NavLink></li>
             </ul>
             </div>
         </nav>
