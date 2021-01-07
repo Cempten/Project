@@ -8,6 +8,10 @@ export const TodoPage = () => {
     const [todos, setTodos] = useState<ITodo[]>([])
 
     useEffect(() => {
+        document.title = 'Todo-list'
+    })
+
+    useEffect(() => {
         const saved = JSON.parse(localStorage.getItem('todos') || '[]') as ITodo[]
         setTodos(saved)
     }, [])
