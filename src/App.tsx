@@ -36,12 +36,13 @@ function App() {
 
   const completeHandler = (id: number) => {
     setTodos(prev => 
-      prev.map(todo => {
-        if (todo.id === id) {
-          todo.completed = !todo.completed                                         //не работает
-        }
-        return todo
-      }
+      prev.map(todo => 
+        todo.id === id
+          ? {
+              ...todo,
+              completed: !todo.completed,
+            }
+          : todo
     ))
   }
 
